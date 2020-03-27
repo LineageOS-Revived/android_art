@@ -1845,6 +1845,9 @@ class Dex2Oat final {
                                      compiler_kind_,
                                      thread_count_,
                                      swap_fd_));
+
+    driver_->PrepareDexFilesForOatFile(timings_);
+
     if (!IsBootImage()) {
       driver_->SetClasspathDexFiles(class_loader_context_->FlattenOpenedDexFiles());
     }
